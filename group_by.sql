@@ -1,6 +1,5 @@
                                                                                          [Group by] assignment
 
-
 CREATE TABLE Actor(Actor_ID int,Actor_name varchar(30),Gender varchar(10),debut_year int);
 
 CREATE TABLE Director(Director_ID int,Director_name varchar(30),no_of_movies int);
@@ -22,8 +21,6 @@ insert into actor values(10,'Shahid Kapoor','male',2003);
 insert into actor values(11,'Katrina Kaif','female',2003);
 insert into actor values(12,'Varun Dhawan','male',2012);
 
-
-
 insert into director values(1,'Rajkumar Hirani',10);
 insert into director values(2,'Sanjay Leela Bhansali',8);
 insert into director values(3,'Aditya Chopra',6);
@@ -33,18 +30,14 @@ insert into director values(6,'Ayan Mukerji',4);
 insert into director values(7,'Santosh Sivan',9);
 insert into director values(8,'Farah Khan',4);
 
-
 insert into movie values('3 Idiots',2009,'comedy',1,3,1,989600000);
 insert into movie values('PK',2014,'satire',1,5,1,789600000);
 insert into movie values('Bajirao Mastani',2015,'historic',8,9,2,68960000);
-
 insert into movie values('Rab ne bana di jodi',2008,'romance',2,5,3,48960000);
-
 insert into movie values('Gully boy',2019,'Musical drama',8,7,4,28950000);
 insert into movie values('Jab we met',2007,'romance',10,3,5,18980000);
 insert into movie values('Padmavat',2018,'historic',8,9,2,38460000);
 insert into movie values('Yeh jawani hai deewani',2013,'romance',6,9,6,581600000);
-
 insert into movie values('Ashoka',2001,'historic',2,3,7,8796000);
 insert into movie values('Happy new year',2014,'comedy',2,9,8,68960000);
 
@@ -66,19 +59,29 @@ select * from director;
 select * from movie;
 select * from DVD;
 
+
 --question number 1
+--- Q1. Display the count of actors and actresses.
 	select gender,count(gender) as number from actor group by gender;
 
+
 --question number 2
+--- Q2. Display the count of movies of each genre.
 	select genre,count(genre) as count from movie group by genre;
 
+
 --question number 3	
+--- Q3. Calculate the oldest released movie of each genre.
 	select genre,min(release_year) as 'oldest release' from movie group by genre;
 
+
 --question number 4
+--- Q4. Calculate the total box office collection for movies of each genre.
 	select genre,sum(box_collection) as 'total box office collection' from movie group by genre;
 
+
 --question number 5
+--- Q5. Display the name of director, current count of movies and total count of movies directed by him/her.
 	                      ????????????????????????????????????????????????????????
 	select director_name, (select count(director_id) from movie) as 'current count' , no_of_movies as 'total count' from director; --there is small misake try to change it 
 
@@ -87,29 +90,35 @@ select * from DVD;
 --cloudyML solution
 	select director_name,count(movie_name),no_of_movies as 'total count' from director,movie where movie.director_id=director.director_id group by director.director_id,director_name,no_of_movies;		--why we need this many group by functions ????
 
+
 --question number 6
+--- Q6. Display the name of lead_1 actors, their count of movies and their total DVD sales.
 	
 --cloudyML solution
 	select lead_1,count(dvd.movie_name) as 'no of movies', sum(sale) as 'total sales' from dvd,movie where dvd.movie_name=movie.movie_name group by lead_1;
 
+
 --question number 7
+--- Q7. Show the release year and number of movies released in each year only ifmore than 1 movie is released each year.
 	SELECT release_year,count(movie_name) as 'no of movies' from  movie group by release_year HAVING count(movie_name)>1;
 
 
 --question number 8
+--- Q8. Display the director name and their total box office collection which should be greater than 50 crores.
 	select director_id, sum(box_collection) from movie group by  director_id having sum(box_collection)>500000000 --this is okay but need small change
 	
-
-
 --cloudyML solution 
 	select director_name,sum(box_collection) as 'total box collection' from movie,director where movie.director_id=director.director_id group by movie.director_id,director_name having sum(box_collection)>500000000;
 
+
 --question number 9
+--- Q9. Give the count of movies of each genre in decreasing order of count.
 	select genre,count(genre) as 'count of movie'  from movie group by genre order by count(genre) desc ;
 
+
 --question number 10
+--- Q10. Sort the movie names based on director names.
 	select director.director_name, movie.movie_name from director full join movie on director.director_id=movie.director_id order by director.director_name;
 	 
 --cloudyML solution
 	select director_name,movie_name from director,movie where movie.director_id=director.director_id order by director_name;
-
