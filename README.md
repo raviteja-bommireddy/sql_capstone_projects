@@ -1,22 +1,21 @@
 # sql_capstone_projects
 sql practice, assignments, many more in data manipulation...
 
---- ASSIGNMENTS
+---**ASSIGNMENTS**
   1) GROUP BY.
   2) SUBQUERY.
   3) JOINS.
-  4) 
 
---- PROJECTS
+--- **PROJECTS**
   1) UNIVERSITY Schema.
   2) DATA MART ANALYSIS.
   3) DATA BANK ANALYSIS.
   4) TEXTURE Tales ANALYSIS.
 
-(1) UNIVERSITY Schema
+(1) **UNIVERSITY Schema**
 
 
-(2) DATA MART ANALYSIS
+(2) **DATA MART ANALYSIS**
 
 I'm seeking assistance in conducting an analysis of the sales and performance metrics for this venture. Notably, in June 2020, significant supply chain alterations were implemented at Data Dart. This overhaul involved the adoption of sustainable packaging practices for all Data Dart products, spanning from the initial farm stage to the final customer delivery. I'm doing some data cleansing and data exploration in quantifying the influence of this transition on the sales performance of Data Dart and its distinct business sectors.
 
