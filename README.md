@@ -1,5 +1,5 @@
 # sql_capstone_projects
-sql practice, assignments, many more in data manipulation...
+sql practice queries & projects with problem statements including cleaning and exploration of data.
 
 ---**ASSIGNMENTS**
   1) GROUP BY.
