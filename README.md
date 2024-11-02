@@ -1,7 +1,7 @@
 **for a quick revision you can visit my blog on medium**
 LINK: https://medium.com/@raviteja_2005/sql-revised-edition-part-1-b3e858dc7956
 
-Table of contents for basic & intermediate concepts in SQL
+## Table of contents for basic & intermediate concepts in SQL
 ![Screenshot 2024-10-07 195747](https://github.com/user-attachments/assets/a6bdad2b-67ad-44a8-b2f0-0016ee6d9c6f)
 
 # sql_capstone_projects
